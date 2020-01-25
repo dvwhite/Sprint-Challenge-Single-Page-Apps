@@ -9,20 +9,17 @@ const CenteredDiv = styled.div`
 `
 
 export default function SearchForm({characters, setDisplayed}) {
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (event) => {
+    console.log(event.target.value.charCodeAt(0))
     setSearchTerm(event.target.value);
-  }
- 
-  const handleSubmit = (event) => {
-    event.preventDefault();
   }
   
   useEffect(() => {
     setDisplayed(
       characters
-        .filter(character => character.name.toLowerCase().includes(searchTerm))
+        .filter(character => character.name.toLowerCase().includes(searchTerm.toLowerCase()))
       )
   }, [searchTerm]);
 
@@ -32,6 +29,7 @@ export default function SearchForm({characters, setDisplayed}) {
        <input
         type="text"
         name="search"
+        value={searchTerm}
         placeholder="Search for a character..."
         onChange={handleChange}
        />

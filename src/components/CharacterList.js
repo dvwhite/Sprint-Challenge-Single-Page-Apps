@@ -20,7 +20,7 @@ export default function CharacterList() {
     }
     
     getCharacters();
-  }, [displayed]);
+  }, [[], displayed]);
 
   if (!characters) return <h2>Loading character data...</h2>
 
