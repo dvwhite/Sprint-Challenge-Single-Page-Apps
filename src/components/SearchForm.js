@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
+import useLocalStorage from 'react-use-localstorage';
 
 const CenteredDiv = styled.div`
   display: flex;
@@ -8,8 +9,8 @@ const CenteredDiv = styled.div`
   margin-bottom: 2%;
 `
 
-export default function SearchForm({characters, setDisplayed}) {
-  const [searchTerm, setSearchTerm] = useState("");
+export default function SearchForm({characters, setResults}) {
+  const [searchTerm, setSearchTerm] = useLocalStorage('searchTerm', "");
 
   const handleChange = (event) => {
     console.log(event.target.value.charCodeAt(0))
@@ -17,7 +18,7 @@ export default function SearchForm({characters, setDisplayed}) {
   }
   
   useEffect(() => {
-    setDisplayed(
+    setResults(
       characters
         .filter(character => character.name.toLowerCase().includes(searchTerm.toLowerCase()))
       )
