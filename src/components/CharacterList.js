@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import CharacterCard from './CharacterCard';
+import SearchForm from './SearchForm';
 import axios from 'axios';
 
 export default function CharacterList() {
-  const [characters, setCharacters] = useState([])
+  const [characters, setCharacters] = useState([]);
+  const [displayed, setDisplayed] = useState([]);
 
   useEffect(() => {
     const getCharacters = () => {
@@ -18,19 +20,25 @@ export default function CharacterList() {
     }
     
     getCharacters();
-  }, []);
-  console.log(characters)
+  }, [displayed]);
 
   if (!characters) return <h2>Loading character data...</h2>
 
   return (
-    <section className="character-list grid-view">
-      {characters.map(character => (
-        <CharacterCard 
-          key={character.id} 
-          character={character} 
-        />
-      ))}
-    </section>
+    <>
+      <SearchForm 
+        characters={characters}
+        setDisplayed={setDisplayed}
+      />
+
+      <section className="character-list grid-view">
+        {displayed.map(character => (
+          <CharacterCard 
+            key={character.id} 
+            character={character} 
+          />
+        ))}
+      </section>
+    </>
   );
 }
