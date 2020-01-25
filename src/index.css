@@ -37,3 +37,40 @@ main {
 header h1 {
   text-align: center;
 }
+
+.character-card2 {
+  background-color: #fff;
+  border: 0;
+  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.24);
+  padding: 1rem;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem auto;
+}
+
+.character-card {
+  background-color: #fff;
+  border: 0;
+  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  position: relative;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.character-info {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+div h3 {
+  text-align: center;
+  padding: 0rem 0.5rem;
+}
+
+.portrait {
+  width: 100%;
+}
