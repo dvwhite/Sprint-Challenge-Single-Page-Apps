@@ -27,13 +27,37 @@ main {
 .grid-view div.card.ui {
   margin: 1.25rem;
 }
-/*
+
 .main-img {
   display: block;
   border-radius: 100%;
   margin: 0 auto;
-} */
+}
 
 header h1 {
   text-align: center;
+}
+
+.character-info {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+div h3 {
+  text-align: center;
+  padding: 0rem 0.5rem;
+}
+
+.portrait {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+a:hover {
+  color: orangered;
 }
